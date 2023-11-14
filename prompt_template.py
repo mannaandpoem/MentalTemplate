@@ -88,12 +88,13 @@ This is a template for tracking the mental health, treatment status, and progres
 
 # Update guidelines:
 When updating template attributes, please consider the process step by step:
-1. Check for new content: Examine whether there is new content detected based on the original content.
+1. Check for new content: Examine whether there is new content detected based on the original content. Special attention should be paid to Cognitive Structure Assessment and Intervention. 
 2. No new content detected: If there is no new content detected and the attribute contains the original content, retain the original content for the attribute. If the attribute doesn't have the original content, output "unknown."
 3. New content detected: If new content is detected, update the attribute using the original content as a base.
-4. Output: Output the updated content for the attribute.Note: 
-- 1. All attributes must be present and filled with "information content" or "original content" or "unknown"! Avoid other unmentioned words such as "ongoing" and "pending"
-- 2. Updates are based on the content of the template's attributes!
+4. Output: Output the updated content for the attribute.
+Note: 
+1. All attributes must be present and filled with "information content" or "original content" or "unknown"! Avoid other unmentioned words such as "ongoing" and "pending"
+2. Updates are based on the content of the template's attributes!
 
 # CBT Psychological Template that need to be updated:
 {template}
