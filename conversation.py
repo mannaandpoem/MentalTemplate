@@ -4,13 +4,9 @@ import openai
 
 from prompt.prompt_template import *
 
-os.environ["AZURE_OPENAI_ENDPOINT"] = "..."
-os.environ["AZURE_OPENAI_API_KEY"] = "..."
 
-
-endpoint = os.environ["AZURE_OPENAI_ENDPOINT"]
-api_key = os.environ["AZURE_OPENAI_API_KEY"]
-
+endpoint = "..."
+api_key = "..."
 azure = True
 
 client = openai.AzureOpenAI(
