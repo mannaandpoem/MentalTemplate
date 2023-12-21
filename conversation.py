@@ -4,9 +4,9 @@ import openai
 
 from prompt_template import *
 
-os.environ["AZURE_OPENAI_ENDPOINT"] = "https://deepwisdom.openai.azure.com/"
-os.environ["AZURE_OPENAI_API_KEY"] = "02ae6058d09849c691176befeae2107c"
-# os.environ["AZURE_OPENAI_API_KEY"] = "9d6524f282f248dea06feb31f5478360"
+os.environ["AZURE_OPENAI_ENDPOINT"] = "..."
+os.environ["AZURE_OPENAI_API_KEY"] = "..."
+
 
 endpoint = os.environ["AZURE_OPENAI_ENDPOINT"]
 api_key = os.environ["AZURE_OPENAI_API_KEY"]
