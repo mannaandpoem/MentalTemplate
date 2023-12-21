@@ -2,7 +2,7 @@ import json
 import os
 
 from annotation import split_dialogue
-from prompt_template import mental_template, mental_template, system_prompt_template
+from prompt.prompt_template import mental_template, system_prompt_template
 
 
 # 构建数据集

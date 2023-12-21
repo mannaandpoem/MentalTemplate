@@ -7,13 +7,11 @@
 # 6. for循环遍历所有文件
 import json
 import random
-import sys
 
-from jsonschema.validators import validate
 from openai import OpenAI
 import os
 
-from prompt_template import system_prompt_template, mental_template, mental_template, guide_prompt, \
+from prompt.prompt_template import system_prompt_template, mental_template, guide_prompt, \
     first_template, template_schema, summarize_template
 from tenacity import (
     retry,
@@ -271,7 +269,7 @@ def summary_json(dir_path):
 
 if __name__ == '__main__':
     # 文件路径
-    dir_path = r'C:\Users\ASUS\PycharmProjects\mental_template\data\CBT\Culturally_Responsive_CBT_Strengths_and_Wellness_ANNOTATE'
+    dir_path = r'/data/CBT/Culturally_Responsive_CBT_Strengths_and_Wellness_ANNOTATE'
     annotate_cbt(dir_path)
 
     

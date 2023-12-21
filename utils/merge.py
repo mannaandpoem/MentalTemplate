@@ -3,7 +3,7 @@
 import json
 import os
 
-dir_path = r'C:\Users\ASUS\PycharmProjects\mental_template\data\CBT'
+dir_path = r'/data/CBT'
 
 all_data = []
 for dir in os.listdir(dir_path):

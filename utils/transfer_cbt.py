@@ -64,6 +64,6 @@ if __name__ == '__main__':
     #         docx_to_txt(dir_path, file_name)
     #         print(file_name + '处理完成')
 
-    filepath = r'C:\Users\ASUS\PycharmProjects\mental_template'
-    docx_to_txt(filepath, '1706.03762.docx')
+    filepath = r'/'
+    docx_to_txt(filepath, '../1706.03762.docx')
 
