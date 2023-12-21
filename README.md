@@ -1,2 +1,2 @@
-# mental_template
-mental template
+# MentalTemplate
+Mental template
