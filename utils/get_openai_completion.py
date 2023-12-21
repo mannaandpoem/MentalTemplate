@@ -7,10 +7,6 @@ from openai import OpenAI
 # os.environ['http_proxy'] = 'http://localhost:7890'
 # os.environ['https_proxy'] = 'http://localhost:7890'
 # os.environ["OPENAI_PROXY"] = "http://127.0.0.1:7890"
-# # os.environ['OPENAI_API_KEY'] = "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"
-# # os.environ['OPENAI_API_KEY'] = "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"
-# os.environ["OPENAI_API_BASE"] = "https://api.openai-forward.com/v1"
-# # os.environ['OPENAI_API_KEY'] = "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"
 #
 # api_keys = ["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",
 #             "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",
