@@ -1,8 +1,6 @@
 import os
 import re
 
-from docx import Document
-
 import os
 from docx import Document
 
@@ -41,12 +39,15 @@ def docx_to_txt(dir_path, docx_file):
             if not has_chinese(line):
                 # Remove timestamp from the line
                 line = remove_timestamp(line)
+                # 对每一行检测是否存在" " (non-breaking space)，第一个替换为": "，其他替换为" " (breaking space)
+                line = line.replace(" ", ": ", 1).replace(" ", " ")
                 # Add the line to the new list
                 new_lines.append(line)
 
     # Save the filtered content into a new text file
     name = os.path.splitext(docx_file)[0]
-    new_path = "C:\\Users\\ASUS\\PycharmProjects\\mental_template\\data\\process_CBT\\new_" + name + ".txt"
+    # new_path = "C:\\Users\\ASUS\\PycharmProjects\\mental_template\\data\\process_CBT\\new_" + name + ".txt"
+    new_path = "C:\\Users\\ASUS\\PycharmProjects\\mental_template\\data\\CBT\\new_" + name + ".txt"
     # txt_path = os.path.join(dir_path, f"new_{name}.txt")
     with open(new_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(new_lines))
@@ -54,11 +55,15 @@ def docx_to_txt(dir_path, docx_file):
 
 if __name__ == '__main__':
     # 文件路径
-    dir_path = r'C:\Users\ASUS\PycharmProjects\mental_template\data\大模型 CBT 预处理'
-    # for循环遍历 dir_path 下所有文件
-    for file_name in os.listdir(dir_path):
-        # 判断文件是否为docx文件
-        if file_name.endswith('.docx'):
-            # 调用 transfer_cbt 函数
-            docx_to_txt(dir_path, file_name)
-            print(file_name + '处理完成')
+    # dir_path = r'C:\Users\ASUS\PycharmProjects\mental_template\data\大模型 CBT 预处理'
+    # # for循环遍历 dir_path 下所有文件
+    # for file_name in os.listdir(dir_path):
+    #     # 判断文件是否为docx文件
+    #     if file_name.endswith('.docx'):
+    #         # 调用 transfer_cbt 函数
+    #         docx_to_txt(dir_path, file_name)
+    #         print(file_name + '处理完成')
+
+    filepath = r'C:\Users\ASUS\PycharmProjects\mental_template'
+    docx_to_txt(filepath, '1706.03762.docx')
+
