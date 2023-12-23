@@ -3,39 +3,12 @@ import os
 import openai
 
 from prompt.prompt_template import *
-
-
-endpoint = "..."
-api_key = "..."
-azure = True
-
-client = openai.AzureOpenAI(
-    # OPENAI_API_TYPE: "eastus2"
-    azure_endpoint=endpoint,
-    api_key=api_key,
-    api_version="2023-07-01-preview"
-)
-
-
-def get_openai_completion(prompt, system="You are a assistant"):
-    if azure:
-        model = "GPT-4"
-    else:
-        model = "gpt-3.5-turbo-1106"
-    completion = client.chat.completions.create(
-        model=model,
-        messages=[
-            {"role": "system", "content": system},
-            {"role": "user", "content": prompt}
-        ]
-    )
-    print(completion.usage.completion_tokens)
-    return completion.choices[0].message.content
+from utils.get_openai_completion import get_openai_completion
 
 
 def one_step_conversation(prompt):
-    rsp = get_openai_completion(prompt, system_prompt_template)
-    template_updated, assistant_msg = rsp.split("===")
+    rsp = get_openai_completion(prompt, system_prompt)
+    template_updated, assistant_msg = rsp.content.split("===")
     return template_updated, assistant_msg
 
 
@@ -68,8 +41,8 @@ def conversation():
         # 如果False，需要重写生成输出。
         # 如果True，则对patient和therapist的pair进行评分。
         prompt = "Patient: " + user_msg + "\nTherapist: " + assistant_msg
-        rsp = get_openai_completion(prompt, system=score_system_template)
-        print(rsp)
+        rsp = get_openai_completion(prompt, score_system_template)
+        print(rsp.content)
 
 
 if __name__ == '__main__':

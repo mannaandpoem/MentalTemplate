@@ -2,7 +2,7 @@ import json
 import os
 
 from annotation import split_dialogue
-from prompt.prompt_template import mental_template, system_prompt_template
+from prompt.prompt_template import mental_template, system_prompt
 
 
 # 构建数据集
@@ -50,7 +50,7 @@ def organize_dataset(dir_path, patient_name):
 
     # 使用字典组织input和output，构建数据集
     dataset = []
-    instruction = system_prompt_template
+    instruction = system_prompt
 
     # 处理第一个文件
     for i, dialogue in enumerate(dialogues):

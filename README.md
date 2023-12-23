@@ -1,4 +1,5 @@
 # MentalTemplate
 Mental template
 
-在 conversation.py 中，首先配置Openai API key 和 endpoint，然后运行即可。get_openai_completion.py 中含有一些API调用的示例。
+只需关注conversation.py和get_openai_completion.py，其他文件是标注代码。
+首先在get_openai_completion.py文件中配置API_KEYS，然后运行conversation.py开始咨询对话。

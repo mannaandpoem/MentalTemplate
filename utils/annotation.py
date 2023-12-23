@@ -11,7 +11,7 @@ import random
 from openai import OpenAI
 import os
 
-from prompt.prompt_template import system_prompt_template, mental_template, guide_prompt, \
+from prompt.prompt_template import system_prompt, mental_template, guide_prompt, \
     first_template, template_schema, summarize_template
 from tenacity import (
     retry,
@@ -49,7 +49,7 @@ def get_completion(prompt):
         model="gpt-3.5-turbo-1106",
         # model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": system_prompt_template},
+            {"role": "system", "content": system_prompt},
             {"role": "user", "content": prompt}
         ],
         temperature=0.5
